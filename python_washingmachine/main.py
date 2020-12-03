@@ -1,5 +1,5 @@
 from __future__ import annotations
-from subsystems import washing, rinsing, spinning
+from subsystems import *
 from facade import WashingMachine
 
 
