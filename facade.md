@@ -35,7 +35,16 @@ Facade, adapter en proxy lijken veel op elkaar, maar de doelen van deze patronen
 - Facade: Het doel van facade is om een complex subsysteem toegankelijk te maken voor clienten, zonder een wrapper, maar functioneert meer als een gateway. De façade dient als voorkant voor een collectie van objecten die samen een verzameling diensten aanbieden.
 
 DEMO:
-laat een aantal demo's zien (we hebben een ShapeMaker in Java, een Wasmachine in Python en een auto die vroem vroem doet in Python.
+Laat een aantal demo's zien (we hebben 2 java demo's, eentje car en eentje home theater).
+
+## Conceptueel uitgelegd
+### Proxy
+Een proxy is een soort doorgeefluik, een van de meest bekende voorbeelden is VPN. Het voegt extra functionaliteit toe aan bestaande services / business logic. Door het toepassen van een proxy pattern kun je voor of na het uitvoeren van de business logic nog extra functionaliteiten toevoegen. 
+### Facade
+Een facade implementeert niet deze interfaces als het service object (niet zoals een proxy zou doen), het is daardoor voor een facade niet mogelijk om zonder aanpassingen tussen een bestaande service en client in komen te staan. 
+- Principle of least knowledge: talk only to your immediate friends.
+#### Adapter
+Een adapter is een communicatielaag tussen twee interfaces die anderszijds niet met elkaar zouden kunnen communiceren.
 
 Vragen?
 Op welke vragen kunnen we ons voorbereiden?
