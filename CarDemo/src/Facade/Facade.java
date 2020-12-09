@@ -2,12 +2,10 @@ package Facade;
 
 import Motormanagement.*;
 
+import java.sql.SQLOutput;
+
 public class Facade {
     private KoelingController koelingController;
-    private Radiator radiator;
-    private TemperatuurSensor temperatuurSensor;
-    private BrandstofPomp brandstofPomp;
-    private LuchtMassaMeter luchtMassaMeter;
     private LuchtdrukController luchtdrukController;
     private Startmotor startmotor;
     private BrandstofInjector brandstofInjector;
@@ -17,12 +15,8 @@ public class Facade {
 
     public Facade() {
 
-        this.radiator = new Radiator();
-        this.temperatuurSensor = new TemperatuurSensor();
-        this.brandstofPomp = new BrandstofPomp();
-        this.luchtMassaMeter = new LuchtMassaMeter();
+
         this.startmotor = new Startmotor();
-        this.temperatuurSensor = new TemperatuurSensor();
         this.koelingController = new KoelingController();
         this.luchtdrukController = new LuchtdrukController();
         this.brandstofInjector = new BrandstofInjector();
@@ -31,12 +25,18 @@ public class Facade {
     }
 
     public void aan() {
+        System.out.println("Lucht inlaat aangezet!");
         luchtdrukController.luchtIntake();
+        System.out.println("Brandstofinjectoren gereed!");
         brandstofInjector.aan();
+        System.out.println("Brndstof injecteren!");
         brandstofInjector.injecteren();
+        System.out.println("Startmotor starten!");
         startmotor.start();
+        System.out.println("Koeling starten!");
         koelingController.setTemperatuurlimiet();
         koelingController.koelen(DEFAULT_TEMP);
+        System.out.println("Katalysator starten!");
         katalysator.aan();
 
     }
