@@ -1,15 +1,17 @@
 package Subsystem;
 
 
+import Interfaces.BlurayInterface;
+
 import java.sql.SQLOutput;
 
 public class Versterker {
-    private BLURAYSpeler bluraySpeler;
+    private BlurayInterface bluraySpeler;
     private CDSpeler cdSpeler;
     private int volume;
     private boolean dolbyAudio;
 
-    public Versterker(BLURAYSpeler bluraySpeler, CDSpeler cdSpeler) {
+    public Versterker(BlurayInterface bluraySpeler, CDSpeler cdSpeler) {
         this.bluraySpeler = bluraySpeler;
         this.cdSpeler = cdSpeler;
         this.volume = 0;

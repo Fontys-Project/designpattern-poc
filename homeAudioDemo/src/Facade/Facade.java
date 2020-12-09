@@ -1,5 +1,6 @@
 package Facade;
 
+import Interfaces.BlurayInterface;
 import Subsystem.*;
 
 import java.util.concurrent.TimeUnit;
@@ -8,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class Facade {
     private AmbiLight ambiLight;
     private CDSpeler cdSpeler;
-    private BLURAYSpeler bluraySpeler;
+    private BlurayInterface bluraySpeler;
     private PopcornMaker popcornMaker;
     private Projector projector;
     private Versterker versterker;
@@ -18,7 +19,8 @@ public class Facade {
         this.ambiLight = new AmbiLight();
         this.versterker = new Versterker(bluraySpeler, cdSpeler);
         this.cdSpeler = new CDSpeler(versterker);
-        this.bluraySpeler = new BLURAYSpeler(versterker);
+        this.bluraySpeler = new BLURAYSpeler(versterker) {
+        };
         this.popcornMaker = new PopcornMaker();
         this.projector = new Projector(bluraySpeler);
         this.whitescreen = new Whitescreen();
@@ -43,8 +45,9 @@ public class Facade {
 
             System.out.println("\n--------Scherm-------\n");
             whitescreen.uitklappen();
+            TimeUnit.SECONDS.sleep(2);
+            projector.aan();
             TimeUnit.SECONDS.sleep(3);
-
 
             System.out.println("\n--------Versterker-------\n");
             versterker.aan();

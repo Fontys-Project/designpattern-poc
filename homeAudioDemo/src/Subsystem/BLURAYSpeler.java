@@ -1,8 +1,9 @@
 package Subsystem;
 
-import org.w3c.dom.ls.LSOutput;
+import Interfaces.BlurayInterface;
 
-public class BLURAYSpeler {
+
+public class BLURAYSpeler implements BlurayInterface {
 
 
     private Versterker versterker;

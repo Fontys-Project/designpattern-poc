@@ -1,9 +1,11 @@
 package Subsystem;
 
-public class Projector {
-    private BLURAYSpeler bluraySpeler;
+import Interfaces.BlurayInterface;
 
-    public Projector(BLURAYSpeler bluraySpeler) {
+public class Projector {
+    private BlurayInterface bluraySpeler;
+
+    public Projector(BlurayInterface bluraySpeler) {
         this.bluraySpeler = bluraySpeler;
     }
 
